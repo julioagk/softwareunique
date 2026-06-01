@@ -14,20 +14,20 @@ export function Technologies() {
   ]
 
   return (
-    <section id="tecnologias" className="py-16 px-6 md:px-12 lg:px-16 max-w-[1536px] mx-auto bg-[#f0f0f0]">
+    <section id="technologies" className="py-16 px-6 md:px-12 lg:px-16 max-w-[1536px] mx-auto bg-[#f0f0f0]">
       {/* Container */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
         
         {/* Left Side Copy */}
         <div className="lg:col-span-1 max-w-lg">
           <span className="text-xs uppercase tracking-[0.2em] text-[#6233f3] font-semibold mb-2 block">
-            Infraestructura
+            Infrastructure
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-normal text-[rgba(30,50,90,0.95)] mb-4 tracking-tight leading-[1.15]">
-            Tecnología orientada a resultados
+            Result-Oriented Technology
           </h2>
           <p className="text-[#5E6470] text-sm md:text-base leading-relaxed font-normal opacity-90">
-            Utilizamos tecnologías modernas para construir plataformas rápidas, seguras y preparadas para escalar a millones de transacciones sin perder estabilidad.
+            We leverage modern technologies to build fast, secure, and highly scalable platforms designed to handle millions of transactions without compromising stability.
           </p>
         </div>
 

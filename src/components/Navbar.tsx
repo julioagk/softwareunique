@@ -7,11 +7,11 @@ interface NavbarProps {
 
 export function Navbar({ onNavigateToBooking }: NavbarProps) {
   const menuItems = [
-    { label: 'Soluciones', target: 'soluciones', hasDropdown: true },
-    { label: 'Servicios', target: 'soluciones', hasDropdown: true },
-    { label: 'Proceso', target: 'proceso', hasDropdown: true },
-    { label: 'Tecnologías', target: 'tecnologias', hasDropdown: true },
-    { label: 'Contacto', target: 'contacto', hasDropdown: true },
+    { label: 'Solutions', target: 'solutions', hasDropdown: true },
+    { label: 'Services', target: 'solutions', hasDropdown: true },
+    { label: 'Process', target: 'process', hasDropdown: true },
+    { label: 'Technologies', target: 'technologies', hasDropdown: true },
+    { label: 'Contact', target: 'contact', hasDropdown: true },
   ]
 
   const scrollToSection = (id: string) => {
@@ -26,10 +26,10 @@ export function Navbar({ onNavigateToBooking }: NavbarProps) {
       {/* Left Side Branding */}
       <div className="flex-initial shrink-0">
         <span className="font-plus-jakarta select-none flex items-center gap-3">
-          <img src="/logosoftwareunido.jpeg" alt="Logo Software Único" className="w-10 h-10 md:w-11 md:h-11 rounded-xl object-contain shadow-md shrink-0 border border-white/30 hover:scale-105 transition-transform duration-300" />
+          <img src="/logosoftwareunido.jpeg" alt="SOFTWARE ÚNIQUE Logo" className="w-10 h-10 md:w-11 md:h-11 rounded-xl object-contain shadow-md shrink-0 border border-white/30 hover:scale-105 transition-transform duration-300" />
           <span className="flex items-center gap-2 text-sm md:text-base font-light tracking-[0.18em] text-[#1E325A]">
             <span>SOFTWARE</span>
-            <span className="text-[#6233f3] font-semibold">ÚNICO</span>
+            <span className="text-[#6233f3] font-semibold">ÚNIQUE</span>
           </span>
         </span>
       </div>
@@ -63,7 +63,7 @@ export function Navbar({ onNavigateToBooking }: NavbarProps) {
           <div className="bg-white/20 p-1 rounded-full flex items-center justify-center">
             <ArrowUpRight className="w-3.5 h-3.5 text-white" />
           </div>
-          <span className="text-xs font-semibold">Agenda una Consultoría</span>
+          <span className="text-xs font-semibold">Schedule a Consultation</span>
         </motion.button>
       </div>
     </nav>

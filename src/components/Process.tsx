@@ -5,39 +5,39 @@ export function Process() {
   const steps = [
     {
       step: '01',
-      title: 'Descubrimiento',
-      description: 'Analizamos a fondo los procesos, metas y oportunidades reales de tu organización.',
+      title: 'Discovery',
+      description: 'Deep dive into your operations, workflows, and business objectives.',
       icon: Eye,
     },
     {
       step: '02',
-      title: 'Diseño',
-      description: 'Diseñamos minuciosamente la arquitectura, la UX y la experiencia del nuevo sistema.',
+      title: 'Architecture',
+      description: 'Designing the structural blueprint, database schemas, and data pipelines.',
       icon: Layers,
     },
     {
       step: '03',
-      title: 'Desarrollo',
-      description: 'Construimos una solución robusta, escalable, moderna y libre de fallos operacionales.',
+      title: 'Development',
+      description: 'Agile coding sprints, high-quality standards, and automated unit testing.',
       icon: Code,
     },
     {
       step: '04',
-      title: 'Evolución',
-      description: 'Optimizamos de forma continua integrando nuevas funcionalidades según tus necesidades.',
+      title: 'Deployment',
+      description: 'Continuous integration, cloud configuration, and secure staging launch.',
       icon: TrendingUp,
     },
   ]
 
   return (
-    <section id="proceso" className="py-16 px-6 md:px-12 lg:px-16 max-w-[1536px] mx-auto bg-[#f0f0f0]">
+    <section id="process" className="py-16 px-6 md:px-12 lg:px-16 max-w-[1536px] mx-auto bg-[#f0f0f0]">
       {/* Header Container */}
       <div className="max-w-3xl mb-12 text-left">
         <span className="text-xs uppercase tracking-[0.2em] text-[#6233f3] font-semibold mb-2 block">
-          Metodología
+          Methodology
         </span>
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-normal text-[rgba(30,50,90,0.95)] tracking-tight">
-          Nuestro proceso
+          Our Process
         </h2>
         <div className="w-16 h-0.5 bg-[#6233f3] mt-3" />
       </div>
@@ -64,7 +64,7 @@ export function Process() {
                   {/* Step Badge & Icon */}
                   <div className="flex items-center justify-between mb-8">
                     <span className="text-xs font-semibold text-[#6233f3] uppercase tracking-widest bg-white/50 border border-white/40 px-3 py-1 rounded-full shadow-sm">
-                      Paso {st.step}
+                      Step {st.step}
                     </span>
                     <div className="p-2 bg-[rgba(30,50,90,0.05)] rounded-lg text-[rgba(30,50,90,0.8)] border border-[rgba(30,50,90,0.08)] group-hover:bg-[#6233f3]/10 group-hover:text-[#6233f3] transition-colors duration-300">
                       <Icon className="w-4 h-4" />

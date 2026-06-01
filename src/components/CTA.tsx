@@ -7,7 +7,7 @@ interface CTAProps {
 
 export function CTA({ onNavigateToBooking }: CTAProps) {
   return (
-    <section id="contacto" className="py-16 px-6 md:px-12 lg:px-16 max-w-[1536px] mx-auto bg-[#f0f0f0]">
+    <section id="contact" className="py-16 px-6 md:px-12 lg:px-16 max-w-[1536px] mx-auto bg-[#f0f0f0]">
       <div className="relative bg-gradient-to-br from-white/40 to-white/20 backdrop-blur-xl border border-white/30 rounded-[2rem] p-6 sm:p-10 md:p-14 text-center flex flex-col items-center justify-center overflow-hidden shadow-sm group">
         
         {/* Luxury Background Glow Effects */}
@@ -16,17 +16,17 @@ export function CTA({ onNavigateToBooking }: CTAProps) {
 
         {/* Small Tag */}
         <span className="text-xs uppercase tracking-[0.25em] text-[#6233f3] font-semibold mb-4 block relative z-10">
-          Contacto Directo
+          Direct Contact
         </span>
 
         {/* Title */}
         <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-normal text-[rgba(30,50,90,0.95)] max-w-4xl tracking-tight leading-[1.15] mb-4 relative z-10">
-          ¿Tu empresa necesita software que realmente se adapte a ella?
+          Does your business need software that actually fits?
         </h2>
 
         {/* Subtitle */}
         <p className="text-[#5E6470] text-sm sm:text-sm md:text-base opacity-90 max-w-xl mb-8 font-normal leading-relaxed relative z-10">
-          Conversemos sobre tus procesos actuales y diseñemos una solución a la medida que impulse tu rendimiento y rentabilidad.
+          Stop struggling with generic platforms. Schedule a session today and talk directly with our systems architects.
         </p>
 
         {/* Primary Action Button */}
@@ -39,7 +39,7 @@ export function CTA({ onNavigateToBooking }: CTAProps) {
           <div className="bg-white/20 p-1.5 rounded-full flex items-center justify-center text-white">
             <Calendar className="w-4 h-4" />
           </div>
-          <span>Agendar Reunión</span>
+          <span>Schedule a Consultation</span>
         </motion.button>
 
         {/* Decorative corner highlights */}

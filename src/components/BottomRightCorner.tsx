@@ -32,10 +32,10 @@ export function BottomRightCorner() {
       {/* Info column */}
       <div className="flex flex-col">
         <span className="text-[14px] sm:text-[16px] md:text-[18px] font-semibold text-[rgba(30,50,90,0.95)]">
-          Arquitectura Escalable
+          Scalable Architecture
         </span>
         <span className="text-[10px] sm:text-[11px] md:text-[12px] text-[rgba(30,50,90,0.6)] leading-tight mt-0.5">
-          Diseñamos software preparado para crecer junto con tu empresa.
+          Designed to grow alongside your operations.
         </span>
       </div>
     </motion.div>

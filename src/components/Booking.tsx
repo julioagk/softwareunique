@@ -32,9 +32,9 @@ export function Booking({ onBackToHome }: BookingProps) {
       user_id: EMAILJS_PUBLIC_KEY,
       template_params: {
         from_name: name,
-        company_name: company || 'No especificada',
+        company_name: company || 'Not specified',
         contact_phone: phone,
-        message: `Solicitud de consultoría para SOFTWARE ÚNICO de ${name} (${company || 'Persona Física'}). Teléfono/WhatsApp: ${phone}`,
+        message: `Consultation request for SOFTWARE ÚNIQUE from ${name} (${company || 'Not specified'}). Phone/WhatsApp: ${phone}`,
       },
     }
 
@@ -69,13 +69,13 @@ export function Booking({ onBackToHome }: BookingProps) {
         }, 1500)
       } else {
         setSubmitStatus('error')
-        setErrorMessage(err?.message || 'Ocurrió un error inesperado al enviar los datos.')
+        setErrorMessage(err?.message || 'An unexpected error occurred while submitting your details.')
       }
     }
   }
 
   const handleWhatsAppRedirect = () => {
-    const text = `Hola SOFTWARE ÚNICO, me gustaría agendar una reunión para conversar sobre un software a medida.`
+    const text = `Hi SOFTWARE ÚNIQUE, I'd like to schedule a meeting to talk about a custom software project.`
     const url = `https://wa.me/${WHATSAPP_PHONE_NUMBER}?text=${encodeURIComponent(text)}`
     window.open(url, '_blank')
   }
@@ -96,7 +96,7 @@ export function Booking({ onBackToHome }: BookingProps) {
           className="flex items-center gap-2 bg-white/50 hover:bg-white/75 backdrop-blur-md border border-white/40 rounded-full px-5 py-2.5 shadow-sm text-xs sm:text-sm font-semibold text-[rgba(30,50,90,0.9)] transition-colors duration-300"
         >
           <ArrowLeft className="w-4 h-4" />
-          <span>Volver al Inicio</span>
+          <span>Back to Home</span>
         </motion.button>
       </div>
 
@@ -116,13 +116,13 @@ export function Booking({ onBackToHome }: BookingProps) {
             {/* Header Content */}
             <div className="text-center w-full mb-6">
               <span className="text-[10px] uppercase tracking-[0.25em] text-[#6233f3] font-semibold mb-2 block">
-                Reservar
+                Book Now
               </span>
               <h2 className="text-2xl font-normal text-[rgba(30,50,90,0.95)] tracking-tight mb-2">
-                Agendar una Reunión
+                Book a Consultation
               </h2>
               <p className="text-[#5E6470] text-xs sm:text-sm leading-relaxed max-w-sm mx-auto font-normal opacity-90">
-                Ingresa tus datos y nos pondremos en contacto contigo hoy mismo para diseñar tu solución de software a medida.
+                Enter your details and our engineering team will get in touch today to design your custom software solution.
               </p>
             </div>
 
@@ -134,7 +134,7 @@ export function Booking({ onBackToHome }: BookingProps) {
                 className="w-full flex items-start gap-3 bg-red-500/10 border border-red-500/20 p-4 rounded-xl mb-6 text-red-600 text-xs sm:text-sm"
               >
                 <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
-                <span>{errorMessage || 'Ocurrió un error al procesar tu solicitud. Por favor intenta de nuevo.'}</span>
+                <span>{errorMessage || 'An error occurred while processing your request. Please try again.'}</span>
               </motion.div>
             )}
 
@@ -144,13 +144,13 @@ export function Booking({ onBackToHome }: BookingProps) {
               {/* Name Field */}
               <div className="flex flex-col gap-1.5 w-full">
                 <label htmlFor="name" className="text-xs font-semibold text-[rgba(30,50,90,0.8)] pl-1">
-                  Nombre completo <span className="text-[#6233f3]">*</span>
+                  Full name <span className="text-[#6233f3]">*</span>
                 </label>
                 <input
                   type="text"
                   id="name"
                   required
-                  placeholder="Ej. Carlos Mendoza"
+                  placeholder="e.g., John Doe"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   disabled={submitStatus === 'loading'}
@@ -162,14 +162,14 @@ export function Booking({ onBackToHome }: BookingProps) {
               <div className="flex flex-col gap-1.5 w-full">
                 <div className="flex justify-between items-center px-1">
                   <label htmlFor="company" className="text-xs font-semibold text-[rgba(30,50,90,0.8)]">
-                    Empresa / Organización
+                    Company / Organization
                   </label>
-                  <span className="text-[10px] text-[rgba(30,50,90,0.5)] lowercase">opcional</span>
+                  <span className="text-[10px] text-[rgba(30,50,90,0.5)] lowercase">optional</span>
                 </div>
                 <input
                   type="text"
                   id="company"
-                  placeholder="Ej. Innova Tech S.A."
+                  placeholder="e.g., Acme Corp"
                   value={company}
                   onChange={(e) => setCompany(e.target.value)}
                   disabled={submitStatus === 'loading'}
@@ -180,13 +180,13 @@ export function Booking({ onBackToHome }: BookingProps) {
               {/* Phone / WhatsApp Field */}
               <div className="flex flex-col gap-1.5 w-full">
                 <label htmlFor="phone" className="text-xs font-semibold text-[rgba(30,50,90,0.8)] pl-1">
-                  Teléfono o WhatsApp <span className="text-[#6233f3]">*</span>
+                  Phone or WhatsApp <span className="text-[#6233f3]">*</span>
                 </label>
                 <input
                   type="tel"
                   id="phone"
                   required
-                  placeholder="Ej. +52 55 1234 5678"
+                  placeholder="e.g., +1 555 123 4567"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value)}
                   disabled={submitStatus === 'loading'}
@@ -205,12 +205,12 @@ export function Booking({ onBackToHome }: BookingProps) {
                 {submitStatus === 'loading' ? (
                   <>
                     <Loader2 className="w-4 h-4 animate-spin" />
-                    <span>Procesando...</span>
+                    <span>Processing...</span>
                   </>
                 ) : (
                   <>
                     <Send className="w-4 h-4" />
-                    <span>Agendar Consultoría</span>
+                    <span>Schedule Consultation</span>
                   </>
                 )}
               </motion.button>
@@ -219,7 +219,7 @@ export function Booking({ onBackToHome }: BookingProps) {
             {/* Direct WhatsApp shortcut section below */}
             <div className="w-full mt-8 pt-6 border-t border-white/30 flex flex-col items-center gap-3">
               <span className="text-xs text-[#5E6470] opacity-80 font-normal">
-                ¿Prefieres conversar directamente por mensajería?
+                Prefer to chat directly via messaging?
               </span>
               <motion.button
                 onClick={handleWhatsAppRedirect}
@@ -228,7 +228,7 @@ export function Booking({ onBackToHome }: BookingProps) {
                 className="flex items-center gap-2.5 bg-[#25D366] text-white rounded-2xl px-6 py-2.5 shadow-md hover:bg-[#20ba56] transition-colors duration-300 text-xs sm:text-sm font-semibold group"
               >
                 <MessageSquare className="w-4 h-4 text-white" />
-                <span>Chatear por WhatsApp</span>
+                <span>Chat on WhatsApp</span>
               </motion.button>
             </div>
           </>
@@ -249,11 +249,11 @@ export function Booking({ onBackToHome }: BookingProps) {
             </motion.div>
 
             <h3 className="text-2xl font-semibold text-[rgba(30,50,90,0.95)] tracking-tight mb-3">
-              ¡Solicitud Recibida!
+              Request Received!
             </h3>
             
             <p className="text-[#5E6470] text-sm leading-relaxed max-w-sm opacity-90 mb-8 font-normal">
-              Gracias, <span className="font-semibold text-[rgba(30,50,90,0.9)]">{name}</span>. Hemos recibido tus datos de contacto con éxito. Un ingeniero de nuestro equipo se pondrá en contacto contigo en breve para coordinar la reunión.
+              Thank you, <span className="font-semibold text-[rgba(30,50,90,0.9)]">{name}</span>. We have received your contact details. A software engineer from our team will reach out shortly.
             </p>
 
             <motion.button
@@ -262,7 +262,7 @@ export function Booking({ onBackToHome }: BookingProps) {
               whileTap={{ scale: 0.98 }}
               className="flex items-center gap-2 bg-[rgba(30,50,90,0.9)] hover:bg-[rgba(30,50,90,1)] text-white rounded-full px-8 py-3.5 shadow-md text-xs sm:text-sm font-semibold transition-colors duration-300"
             >
-              <span>Regresar al Inicio</span>
+              <span>Back to Home</span>
             </motion.button>
           </motion.div>
         )}
