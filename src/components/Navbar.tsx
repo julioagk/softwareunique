@@ -25,8 +25,8 @@ export function Navbar({ onNavigateToBooking }: NavbarProps) {
     <nav className="flex items-center justify-between py-6 px-6 md:px-10 w-full relative z-10">
       {/* Left Side Branding */}
       <div className="flex-1">
-        <span className="font-regular tracking-tighter text-xl md:text-2xl text-[rgba(30,50,90,0.9)] font-semibold select-none flex items-center gap-2">
-          <img src="/logosoftwareunido.jpeg" alt="Logo Software Único" className="w-8 h-8 rounded-lg object-contain shadow-sm shrink-0 border border-white/20" />
+        <span className="font-regular tracking-tighter text-xl md:text-2xl text-[rgba(30,50,90,0.9)] font-semibold select-none flex items-center gap-3">
+          <img src="/logosoftwareunido.jpeg" alt="Logo Software Único" className="w-12 h-12 md:w-14 md:h-14 rounded-xl md:rounded-2xl object-contain shadow-md shrink-0 border border-white/30 hover:scale-105 transition-transform duration-300" />
           <span>
             SOFTWARE <span className="text-[#C5A880]">ÚNICO</span>
           </span>
