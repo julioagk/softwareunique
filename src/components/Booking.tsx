@@ -34,7 +34,7 @@ export function Booking({ onBackToHome }: BookingProps) {
         from_name: name,
         company_name: company || 'No especificada',
         contact_phone: phone,
-        message: `Solicitud de consultoría para SOFTWAREUNICO de ${name} (${company || 'Persona Física'}). Teléfono/WhatsApp: ${phone}`,
+        message: `Solicitud de consultoría para SOFTWARE ÚNICO de ${name} (${company || 'Persona Física'}). Teléfono/WhatsApp: ${phone}`,
       },
     }
 
@@ -75,7 +75,7 @@ export function Booking({ onBackToHome }: BookingProps) {
   }
 
   const handleWhatsAppRedirect = () => {
-    const text = `Hola SOFTWAREUNICO, me gustaría agendar una reunión para conversar sobre un software a medida.`
+    const text = `Hola SOFTWARE ÚNICO, me gustaría agendar una reunión para conversar sobre un software a medida.`
     const url = `https://wa.me/${WHATSAPP_PHONE_NUMBER}?text=${encodeURIComponent(text)}`
     window.open(url, '_blank')
   }

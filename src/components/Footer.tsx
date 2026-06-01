@@ -7,8 +7,11 @@ export function Footer() {
         
         {/* Brand Label */}
         <div>
-          <span className="font-regular tracking-tighter text-lg text-[rgba(30,50,90,0.9)] font-semibold select-none">
-            SOFTWARE<span className="text-[#C5A880]">UNICO</span>
+          <span className="font-regular tracking-tighter text-lg text-[rgba(30,50,90,0.9)] font-semibold select-none flex items-center gap-2">
+            <img src="/logosoftwareunido.jpeg" alt="Logo Software Único" className="w-6 h-6 rounded-md object-contain shrink-0 border border-white/20" />
+            <span>
+              SOFTWARE <span className="text-[#C5A880]">ÚNICO</span>
+            </span>
           </span>
           <p className="text-[#5E6470] text-xs mt-1.5 opacity-80 font-normal">
             Bespoke Software Engineering & AI Studio.
