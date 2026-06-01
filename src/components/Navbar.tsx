@@ -63,7 +63,8 @@ export function Navbar({ onNavigateToBooking }: NavbarProps) {
           <div className="bg-white/20 p-1 rounded-full flex items-center justify-center">
             <ArrowUpRight className="w-3.5 h-3.5 text-white" />
           </div>
-          <span className="text-xs font-semibold">Schedule a Consultation</span>
+          <span className="text-xs font-semibold hidden sm:inline">Schedule a Consultation</span>
+          <span className="text-xs font-semibold inline sm:hidden">Schedule</span>
         </motion.button>
       </div>
     </nav>

@@ -180,7 +180,7 @@ export function Solutions({ onNavigateToBooking }: SolutionsProps) {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="relative w-full max-w-[650px] bg-white/95 backdrop-blur-xl border border-white rounded-[2rem] p-6 sm:p-10 md:p-12 shadow-2xl flex flex-col text-left overflow-hidden z-10"
+              className="relative w-full max-w-[650px] max-h-[90vh] overflow-y-auto bg-white/95 backdrop-blur-xl border border-white rounded-[2rem] p-6 sm:p-10 md:p-12 shadow-2xl flex flex-col text-left z-10"
             >
               {/* Top Accent corner marks */}
               <div className="absolute top-6 left-6 w-3 h-3 border-t border-l border-[#6233f3]/30" />
