@@ -2,11 +2,9 @@ import React, { useState } from 'react'
 import { motion } from 'motion/react'
 import { ArrowLeft, Send, CheckCircle2, MessageSquare, AlertCircle, Loader2 } from 'lucide-react'
 
-// CONFIGURATION: Customize your EmailJS and WhatsApp settings here
-const EMAILJS_SERVICE_ID = 'service_default'
-const EMAILJS_TEMPLATE_ID = 'template_booking'
-const EMAILJS_PUBLIC_KEY = 'user_placeholder' // Replace with your EmailJS Public Key
-const WHATSAPP_PHONE_NUMBER = '521234567890' // Replace with your real WhatsApp number (include country code)
+// CONFIGURATION: Customize your Formspree and WhatsApp settings here
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xeedygnvy'
+const WHATSAPP_PHONE_NUMBER = '528136458366' // Replace with your real WhatsApp number (include country code)
 
 interface BookingProps {
   onBackToHome: () => void
@@ -27,50 +25,32 @@ export function Booking({ onBackToHome }: BookingProps) {
     setErrorMessage('')
 
     const payload = {
-      service_id: EMAILJS_SERVICE_ID,
-      template_id: EMAILJS_TEMPLATE_ID,
-      user_id: EMAILJS_PUBLIC_KEY,
-      template_params: {
-        from_name: name,
-        company_name: company || 'Not specified',
-        contact_phone: phone,
-        message: `Consultation request for SOFTWARE ÚNIQUE from ${name} (${company || 'Not specified'}). Phone/WhatsApp: ${phone}`,
-      },
+      name: name,
+      company: company || 'Not specified',
+      phone: phone,
+      message: `Consultation request for SOFTWARE ÚNIQUE. Phone/WhatsApp: ${phone}`,
     }
 
     try {
-      const response = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json',
         },
         body: JSON.stringify(payload),
       })
 
-      if (response.ok || response.status === 200) {
+      if (response.ok) {
         setSubmitStatus('success')
       } else {
-        // Fallback for development if keys are still placeholders
-        if (EMAILJS_PUBLIC_KEY === 'user_placeholder') {
-          setTimeout(() => {
-            setSubmitStatus('success')
-          }, 1500)
-        } else {
-          const errText = await response.text()
-          throw new Error(errText || 'Error al enviar a EmailJS')
-        }
+        const data = await response.json().catch(() => ({}))
+        throw new Error(data?.error || 'Error submitting form to Formspree')
       }
     } catch (err: any) {
       console.error(err)
-      if (EMAILJS_PUBLIC_KEY === 'user_placeholder') {
-        // Safe fallback simulation for UX demonstration
-        setTimeout(() => {
-          setSubmitStatus('success')
-        }, 1500)
-      } else {
-        setSubmitStatus('error')
-        setErrorMessage(err?.message || 'An unexpected error occurred while submitting your details.')
-      }
+      setSubmitStatus('error')
+      setErrorMessage(err?.message || 'An unexpected error occurred while submitting your details.')
     }
   }
 
