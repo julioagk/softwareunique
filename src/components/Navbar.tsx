@@ -26,10 +26,10 @@ export function Navbar({ onNavigateToBooking }: NavbarProps) {
       {/* Left Side Branding */}
       <div className="flex-initial shrink-0">
         <span className="font-plus-jakarta select-none flex items-center gap-3">
-          <img src="/logosoftwareunido.jpeg" alt="SOFTWARE ÚNIQUE Logo" className="w-10 h-10 md:w-11 md:h-11 rounded-xl object-contain shadow-md shrink-0 border border-white/30 hover:scale-105 transition-transform duration-300" />
+          <img src="/logosoftwareunido.jpeg" alt="SOFTWARE UNIQUE Logo" className="w-10 h-10 md:w-11 md:h-11 rounded-xl object-contain shadow-md shrink-0 border border-white/30 hover:scale-105 transition-transform duration-300" />
           <span className="flex items-center gap-2 text-sm md:text-base font-light tracking-[0.18em] text-[#1E325A]">
             <span>SOFTWARE</span>
-            <span className="text-[#6233f3] font-semibold">ÚNIQUE</span>
+            <span className="text-[#6233f3] font-semibold">UNIQUE</span>
           </span>
         </span>
       </div>
